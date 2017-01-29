@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<title>Chat</title>
+</head>
+<body>
+	<div id="wrapper">
+        <div id="header">
+            <div class="editProf">
+                <p>You are online for: </p><p>Your local times is: </p>
+                <ul>
+                    <li><a href="#">Edit personal info</a></li>
+                    <li><a href="#">Private messages</a> </li>
+                </ul>
+            </div>
+                    
+            <div class="chatName"><!--Сдусб логотип--><p>YOUR CHAT NAME</p></div>
+        </div>
+        <div id="userChat">
+          <input style="" name="name" type="text" placeholder="Enter name...">
+          <div class="user">
+            <p>online: <span id="countPeoply"></span></p>
+            <div class="itemUser">
+              <ul id="peoply">
+                <li>Anton Tytenko</li>
+                <li>John Snow</li>
+                <li>Andrew Simpson</li>
+                <li>Alison Black</li>
+                <li>Sasha Stuart</li>
+                </ul>
+              </div>
+          </div>
+        </div>
+        <div id="chat">
+            <div class="korpus">
+              <input type="radio" name="odin" checked="checked" id="vkl1"/>
+              	<label for="vkl1">Main chat</label>
+              <input type="radio" name="odin" id="vkl2"/>
+                <label for="vkl2">Chat with Alison (2) [x]</label>
+             <!--Main chat-->
+              <div id="textChat" class="textChat">
+                <p><span>Anton Tytenko</span>: Hi, how is the weather there?</p>
+                <p><span>Alison Black</span>: It`s snowy, temperature here is 10 degrees below zero celsius.</p>
+                <p><span>John Snow</span>: Wuh, it seens winter has come indeed...</p>
+              </div>
+              <!--Chat with Alison (2) [x]-->
+              <div class="textChat"><strong>...</strong></div>
+              
+            </div>
+        </div>
+        <div id="enterMassage">
+        	<form action="index.html" method="post">
+            	<textarea id="textMessage" placeholder="Enter message..."></textarea>
+                <button><strong>B</strong></button>
+                <button><em>I</em></button>
+                <button style="text-decoration: underline;">U</button>
+                <button>Link</button>
+                <input  id="submit" value="Send message" type="button" >
+                
+            </form>
+            <ul>
+            	<li><span id="characters">0</span> characters entered</li>
+                <li><span>0</span> letters entered</li>
+                <li><span>0</span> whitespace characters entered</li>
+                <li><span>0</span> punctuation marks entered</li>
+            </ul>
+        </div>
+	<script type="text/javascript">
+	//Да, я знаю что не нужно было писать js, просто решил немного по улучшить свой код.
+	// Если нужно будет могу удалить...
+	var message = document.getElementById('textMessage');
+	message.onblur = function() {document.getElementById('characters').innerHTML = message.value.length;}
+	
+	var subm = document.getElementById('submit');
+	subm.onclick = function() {
+		var message = document.getElementById('textMessage');
+		if (message.value != '') {
+			var chat = document.getElementById('textChat');
+			
+			var nel=document.createElement('p');
+			nel.innerHTML = "<span>You</span>: "+ message.value;
+			chat.appendChild(nel);
+			message.value = '';
+		}
+	}
+	
+	var ul = document.getElementById('peoply');
+	
+	alert(ul.length)
+	//userChat.textContent = ul[1].length;
+	</script>
+       
+    </div>
+</body>
+</html>
