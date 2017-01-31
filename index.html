@@ -8,17 +8,18 @@
 	<div id="wrapper">
         <div id="header">
             <div class="editProf">
-                <p>You are online for: </p><p>Your local times is: </p>
+                <p>You are online for: <span class="time"></span></p>
+                <p>Your local times is: <span></span></p>
                 <ul>
                     <li><a href="#">Edit personal info</a></li>
                     <li><a href="#">Private messages</a> </li>
                 </ul>
             </div>
                     
-            <div class="chatName"><!--Сдусб логотип--><p>YOUR CHAT NAME</p></div>
+            <div class="chatName"><p>YOUR CHAT NAME</p></div>
         </div>
         <div id="userChat">
-          <input name="name" id="name" type="text" placeholder="Enter name...">
+          <input id="name" type="text" placeholder="Enter name...">
           <div class="user">
             <p>online: <span id="countPeoply"></span></p>
             <div class="itemUser">
@@ -40,9 +41,9 @@
                 <label for="vkl2">Chat with Alison (2) [x]</label>
              <!--Main chat-->
               <div id="textChat" class="textChat">
-                <p><span>Anton Tytenko</span>: Hi, how is the weather there?</p>
-                <p><span>Alison Black</span>: It`s snowy, temperature here is 10 degrees below zero celsius.</p>
-                <p><span>John Snow</span>: Wuh, it seens winter has come indeed...</p>
+                <p><span class="userName">Anton Tytenko</span>: Hi, how is the weather there? <span class="time">23:21</span></p>
+                <p><span class="userName">Alison Black</span>: It`s snowy, temperature here is 10 degrees below zero celsius.  <span class="time">23:27</span></p>
+                <p><span class="userName">John Snow</span>: Wuh, it seens winter has come indeed...  <span class="time">23:31</span></p>
               </div>
               <!--Chat with Alison (2) [x]-->
               <div class="textChat"><strong>...</strong></div>
@@ -67,7 +68,6 @@
             </ul>
         </div>
 	<script type="text/javascript" src="js/script.js"></script>
-       
     </div>
 </body>
 </html>

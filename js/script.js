@@ -12,7 +12,7 @@ var message = document.getElementById('textMessage');
 		if (message.value != '') {
 			var chat = document.getElementById('textChat');
 			var nel=document.createElement('p');
-			nel.innerHTML = "<span>You</span>: "+ message.value;
+			nel.innerHTML = "<span class='userName'>You</span>: "+ message.value + "<spsn class='time' id='time'></span>";
 			chat.appendChild(nel);
 			message.value = '';
 		}
@@ -20,12 +20,15 @@ var message = document.getElementById('textMessage');
 	
 	//При нажатии на клавишу Enter отпралвяеться сообщение
 	message.onkeyup = function (e) {
+		if (message.value != '') {
 		if (e.keyCode === 13) {
+			
 			var chat = document.getElementById('textChat');
 			var nel=document.createElement('p');
-			nel.innerHTML = "<span>You</span>: "+ message.value;
+			nel.innerHTML = "<span class='userName'>You</span>: "+ message.value + "<spsn class='time' id='time'></span>";
 			chat.appendChild(nel);
 			message.value = '';
+		}
 		}
 	}
 	//Функция для добавление своего имени в список онлайн
@@ -46,3 +49,12 @@ var message = document.getElementById('textMessage');
 	var li = ul.getElementsByTagName('li');
 	countPeoply.textContent = li.length;
 	
+function time() {	
+	var date = new Date();
+	var m = date.getMinutes();
+	var h = date.getHours();
+	var s = date.getSeconds();
+	var time = document.getElementsByClassName('time');
+	time.innerHTML  = h +":"+ m;
+}
+time();
