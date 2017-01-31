@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
 <meta charset="utf-8" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -8,7 +9,7 @@
 	<div id="wrapper">
         <div id="header">
             <div class="editProf">
-                <p>You are online for: <span class="time"></span></p>
+                <p>You are online for: <span id="time"></span></p>
                 <p>Your local times is: <span></span></p>
                 <ul>
                     <li><a href="#">Edit personal info</a></li>
@@ -57,12 +58,12 @@
                 <button><em>I</em></button>
                 <button style="text-decoration: underline;">U</button>
                 <button>Link</button>
-                <input  id="submit" value="Send message" type="button" >
+                <input  id="submit" value="Send message" type="button" onKeyPress="this.keyCode==13" >
                 
             </form>
             <ul>
             	<li><span id="characters">0</span> characters entered</li>
-                <li><span id="">0</span> letters entered</li>
+                <li><span id="letters">0</span> letters entered</li>
                 <li><span>0</span> whitespace characters entered</li>
                 <li><span>0</span> punctuation marks entered</li>
             </ul>
