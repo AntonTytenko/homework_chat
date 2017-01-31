@@ -18,7 +18,7 @@
             <div class="chatName"><!--Сдусб логотип--><p>YOUR CHAT NAME</p></div>
         </div>
         <div id="userChat">
-          <input style="" name="name" type="text" placeholder="Enter name...">
+          <input name="name" id="name" type="text" placeholder="Enter name...">
           <div class="user">
             <p>online: <span id="countPeoply"></span></p>
             <div class="itemUser">
@@ -69,8 +69,9 @@
 	<script type="text/javascript">
 	var message = document.getElementById('textMessage');
 	//Количество набраных символов
-	message.onblur = function() {document.getElementById('characters').innerHTML = message.value.length;}
+	message.onchange = function() {document.getElementById('characters').innerHTML = message.value.length;}
 	
+	//При нажатии на кнопку отправляеться сообщение
 	var subm = document.getElementById('submit');
 	subm.onclick = function() {
 		var message = document.getElementById('textMessage');
@@ -83,9 +84,33 @@
 		}
 	}
 	
-	var ul = document.getElementById('peoply');
+	//При нажатии на клавишу Enter отпралвяеться сообщение
+	message.onkeyup = function (e) {
+		var message = document.getElementById('textMessage');
+		if (e.keyCode === 13) {
+			var chat = document.getElementById('textChat');
+			var nel=document.createElement('p');
+			nel.innerHTML = "<span>You</span>: "+ message.value;
+			chat.appendChild(nel);
+			message.value = '';
+		}
+	}
+	//Функция для добавление своего имени в список онлайн
+	var name = document.getElementById('name');
+	name.onkeyup = function (event) {
+		if (event.keyCode === 13) {
+			alert('You push Enter');
+			/*var peoply = document.getElementById('peoply');
+			var li = document.createElement('li');
+			li.textContent = name.value;
+			peoply.appendChild(nel);
+			name.value = '';*/
+		}
+	}
 	
-	alert(ul.length)
+	
+	var ul = document.getElementById('peoply');
+	//alert(ul.length)
 	//userChat.textContent = ul[1].length;
 	</script>
        
