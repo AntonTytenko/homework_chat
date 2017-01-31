@@ -61,58 +61,12 @@
             </form>
             <ul>
             	<li><span id="characters">0</span> characters entered</li>
-                <li><span>0</span> letters entered</li>
+                <li><span id="">0</span> letters entered</li>
                 <li><span>0</span> whitespace characters entered</li>
                 <li><span>0</span> punctuation marks entered</li>
             </ul>
         </div>
-	<script type="text/javascript">
-	var message = document.getElementById('textMessage');
-	//Количество набраных символов
-	message.onchange = function() {document.getElementById('characters').innerHTML = message.value.length;}
-	
-	//При нажатии на кнопку отправляеться сообщение
-	var subm = document.getElementById('submit');
-	subm.onclick = function() {
-		var message = document.getElementById('textMessage');
-		if (message.value != '') {
-			var chat = document.getElementById('textChat');
-			var nel=document.createElement('p');
-			nel.innerHTML = "<span>You</span>: "+ message.value;
-			chat.appendChild(nel);
-			message.value = '';
-		}
-	}
-	
-	//При нажатии на клавишу Enter отпралвяеться сообщение
-	message.onkeyup = function (e) {
-		var message = document.getElementById('textMessage');
-		if (e.keyCode === 13) {
-			var chat = document.getElementById('textChat');
-			var nel=document.createElement('p');
-			nel.innerHTML = "<span>You</span>: "+ message.value;
-			chat.appendChild(nel);
-			message.value = '';
-		}
-	}
-	//Функция для добавление своего имени в список онлайн
-	var name = document.getElementById('name');
-	name.onkeyup = function (event) {
-		if (event.keyCode === 13) {
-			alert('You push Enter');
-			/*var peoply = document.getElementById('peoply');
-			var li = document.createElement('li');
-			li.textContent = name.value;
-			peoply.appendChild(nel);
-			name.value = '';*/
-		}
-	}
-	
-	
-	var ul = document.getElementById('peoply');
-	//alert(ul.length)
-	//userChat.textContent = ul[1].length;
-	</script>
+	<script type="text/javascript" src="js/script.js"></script>
        
     </div>
 </body>
